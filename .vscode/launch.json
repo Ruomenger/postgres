@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "pg_ctl start",
+            "program": "${env:HOME}/local/tools/psql/bin/pg_ctl",
+            "args": [
+                "-D",
+                "${env:HOME}/local/tools/psql/data",
+                "-l",
+                "${workspaceFolder}/.vscode/logpg.log",
+                "start"
+            ],
+            "cwd": "${env:HOME}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "pg_ctl status",
+            "program": "${env:HOME}/local/tools/psql/bin/pg_ctl",
+            "args": [
+                "-D",
+                "${env:HOME}/local/tools/psql/data",
+                "-l",
+                "${workspaceFolder}/.vscode/logpg.log",
+                "status"
+            ],
+            "cwd": "${env:HOME}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "initdb",
+            "program": "${env:HOME}/local/tools/psql/bin/initdb",
+            "args": [],
+            "cwd": "${env:HOME}"
+        }
+    ]
+}
